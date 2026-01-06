@@ -1,0 +1,398 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f6f6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 6px;
+  width: 300px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+}
+
+button {
+  padding: 10px;
+  width: 100%;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+button1 {
+  padding: 10px;
+  width: 4%;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+}
+
+
+/* LOGIN PAGE */
+.login-container {
+  display: flex;
+  height: 100vh;
+  background: #f3f4f6;
+}
+
+/* FORM */
+.login-form {
+  width: 40%;
+  background: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form .logo {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.login-form h2 {
+  margin-bottom: 50px;
+  font-size: 35px;
+  text-align: center;
+}
+
+#subHello {
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+/* Input Container with Icon */
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #007bff;
+  z-index: 1;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 15px 20px 15px 50px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #97d2fa 0%, #007bff 100%);
+  outline: none;
+  font-size: 14px;
+  color: #000000;
+  box-shadow: 0 2px 10px rgba(139, 92, 246, 0.1);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-container input:focus {
+  background: linear-gradient(135deg, #6ec4f1 0%, #ffffff 100%);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+.input-container input::placeholder {
+  color: #000000;
+  font-size: 14px;
+}
+
+/* Form Options - Remember me & Forgot password */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 13px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  cursor: pointer;
+  user-select: none;
+}
+
+.remember-me input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #63aee7;
+  border-radius: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.remember-me input[type="checkbox"]:checked {
+  background: #d5d5df;
+  border-color: #007bff;
+}
+
+.remember-me input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.forgot-password {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #63aee7;
+}
+
+.login-form button {
+  margin-top: 10px;
+  padding: 15px;
+  border: none;
+  background: linear-gradient(135deg, #63aee7, #007bff);
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.login-form button:hover {
+  background: linear-gradient(135deg, #63aee7, #007bff);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.credit {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* RIGHT SIDE */
+.login-visual {
+  background-image: url('../blue_image/blue_mountain.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  width: 60%;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================ */
+/* DASHBOARD STYLES */
+/* ============================================ */
+
+/* LAYOUT */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  background: #f3f4f6;
+}
+
+/* TOP BAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2563eb;
+  color: white;
+  padding: 15px;
+}
+
+.logout {
+  padding: 6px 12px;
+  background: white;
+  color: #2563eb;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: auto;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+}
+
+.card-box {
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.card-box h4 {
+  margin-bottom: 5px;
+}
+
+/* BUTTON */
+.btn-admin {
+  margin: 0 15px 10px;
+  padding: 8px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* TABLE */
+.table-wrapper {
+  padding: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #2563eb;
+  color: white;
+  text-align: left;
+  /* Default left alignment */
+}
+
+/* TABLE COLUMNS ALIGNMENT */
+/* 1. ID */
+th:nth-child(1),
+td:nth-child(1) {
+  text-align: center;
+  width: 50px;
+}
+
+/* 2. Nama */
+th:nth-child(2),
+td:nth-child(2) {
+  text-align: left;
+}
+
+/* 3. Departemen */
+th:nth-child(3),
+td:nth-child(3) {
+  text-align: left;
+}
+
+/* 4. Harga */
+th:nth-child(4),
+td:nth-child(4) {
+  text-align: right;
+}
+
+/* 5. Stok */
+th:nth-child(5),
+td:nth-child(5) {
+  text-align: center;
+  width: 80px;
+}
+
+/* 6. Status */
+th:nth-child(6),
+td:nth-child(6) {
+  text-align: center;
+  width: 100px;
+}
+
+/* 7. Aksi */
+th:nth-child(7),
+td:nth-child(7) {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.btn-small {
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  width: auto !important;
+}
+
+/* PAGINATION */
+.pagination {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination button {
+  width: auto;
+  /* Jangan full width */
+  margin: 0;
+  /* Hapus margin top default button */
+  padding: 8px 16px;
+  background: #2563eb;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+#pageInfo {
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

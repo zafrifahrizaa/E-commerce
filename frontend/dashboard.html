@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Produk</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <div class="layout">
+
+    <!-- BAGIAN NAVIGASI SAMPING (DINONAKTIFKAN) -->
+
+    <!-- AREA KONTEN UTAMA -->
+    <main class="main">
+
+      <!-- BAGIAN HEADER (JUDUL & LOGIN STATUS) -->
+      <header class="topbar">
+        <div>
+          <h2>Dashboard Produk</h2>
+          <span id="roleBadge"
+            style="font-size: 12px; background: #e0e7ff; color: #3730a3; padding: 2px 8px; border-radius: 99px;">Loading...</span>
+        </div>
+        <button class="logout" onclick="logout()">Logout</button>
+      </header>
+
+      <!-- BAGIAN KARTU STATISTIK (OPSIONAL) -->
+
+      <!-- BAGIAN FILTER & PENCARIAN -->
+      <div class="controls-wrapper"
+        style="padding: 0 15px 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+
+        <div class="filters" style="display: flex; gap: 10px;">
+          <input type="text" id="searchInput" placeholder="Cari Produk / Dept..."
+            style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; width: 200px;">
+
+          <select id="sortSelect" style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px;">
+            <option value="id">Urutkan ID</option>
+            <option value="nama">Urutkan Nama</option>
+            <option value="harga">Urutkan Harga</option>
+            <option value="stok">Urutkan Stok</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button id="btnNonPaging" class="btn-admin btn-small" style="background: #f59e0b; margin: 0;"
+            onclick="window.location.href='non-pagination.html'">Buka Mode Non-Pagination</button>
+          <button id="btnAdminPage" class="btn-admin btn-small" style="margin: 0; background: #6366f1;"
+            onclick="window.location.href='admin_only.html'">Halaman Admin</button>
+        </div>
+      </div>
+
+      <!-- TABEL DATA PRODUK -->
+      <div class="table-wrapper">
+        <table id="produk-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nama</th>
+              <th>Departemen</th>
+              <th>Harga</th>
+              <th>Stok</th>
+              <th>Status</th>
+              <th id="headerAksi">Aksi</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <!-- NAVIGASI HALAMAN (PAGINATION) -->
+      <div class="pagination"
+        style="display: flex; justify-content: center; align-items: center; gap: 20px; padding: 20px;">
+        <button id="prev" style="width: auto; padding: 8px 16px;">&larr; Prev</button>
+        <span id="pageInfo" style="font-weight: bold; color: #475569;">Page 1 of ...</span>
+        <button id="next" style="width: auto; padding: 8px 16px;">Next &rarr;</button>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- FORM MODAL UNTUK TAMBAH / EDIT PRODUK -->
+  <div id="productModal" class="modal"
+    style="display:none; position:fixed; z-index:100; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.4);">
+    <div class="modal-content"
+      style="background-color:#fefefe; margin:10% auto; padding:20px; border:1px solid #888; width:50%; border-radius:8px;">
+      <h3 id="modalTitle">Tambah Produk</h3>
+      <form id="productForm">
+        <input type="hidden" id="productId">
+
+        <div style="margin-bottom:15px;">
+          <label>Nama Produk</label>
+          <input type="text" id="nama" required style="width:100%; padding:8px; display:block; margin-top:5px;">
+        </div>
+
+        <div style="margin-bottom:15px;">
+          <label>Kategori (Departemen)</label>
+          <input type="text" id="kategori" list="deptList" required
+            style="width:100%; padding:8px; display:block; margin-top:5px;">
+          <datalist id="deptList">
+            <option value="Elektronik">
+            <option value="Fashion">
+            <option value="Rumah Tangga">
+            <option value="Otomotif">
+          </datalist>
+        </div>
+
+        <div style="margin-bottom:15px;">
+          <label>Harga</label>
+          <input type="number" id="harga" required style="width:100%; padding:8px; display:block; margin-top:5px;">
+        </div>
+
+        <div style="margin-bottom:15px;">
+          <label>Stok</label>
+          <input type="number" id="stok" required style="width:100%; padding:8px; display:block; margin-top:5px;">
+        </div>
+
+        <div style="margin-bottom:15px;">
+          <label>Status</label>
+          <select id="status" style="width:100%; padding:8px; display:block; margin-top:5px;">
+            <option value="Tersedia">Tersedia</option>
+            <option value="Habis">Habis</option>
+          </select>
+        </div>
+
+        <div style="text-align:right;">
+          <button type="button" onclick="closeModal()"
+            style="padding:8px 16px; background:#ccc; border:none; cursor:pointer; border-radius:4px; margin-right:10px;">Batal</button>
+          <button type="submit"
+            style="padding:8px 16px; background:#10b981; color:white; border:none; cursor:pointer; border-radius:4px;">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/rbac.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+
+</html>
